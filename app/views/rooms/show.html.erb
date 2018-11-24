@@ -1,0 +1,19 @@
+<a href="/"><h2>Several People Are Solving</h2></a>
+<h1><%= @parsed_crossword['name'] %></h1>
+<p>
+  <%= Time.at(@parsed_crossword['date']/1000).to_date.to_s %> - 
+  <%- if @parsed_crossword['creator'] -%>
+    Set by <%= @parsed_crossword['creator']['name'] %>
+    -
+  <%- end -%>
+  <a href="<%= @url %>">Published by the Guardian</a>
+</p>
+
+<%= content_tag(:div, '', class: 'js-crossword', data: {
+  crossword: @crossword,
+  crosswordIdentifier: crossword_identifier,
+  room: params[:room],
+}) %>
+
+<%= stylesheet_pack_tag 'crosswords/crossword' %>
+<%= javascript_pack_tag "crosswords/main", "data-turbolinks-track": "reload" %>

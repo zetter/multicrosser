@@ -1,0 +1,4 @@
+<%- @crossword_feed.feed.each do |feed_item| -%>
+  <h3><%= Time.xmlschema(feed_item['date']).localtime.to_date %></h3>
+  <%= link_to(feed_item['title'], crossword_path(feed_item['source'], feed_item['series'], feed_item['identifier'])) %>
+<%- end -%>
