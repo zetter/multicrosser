@@ -1,16 +1,22 @@
-// Run this example by adding <%= javascript_pack_tag 'hello_react' %> to the head of your layout file,
-// like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
-// of the page.
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Crossword from 'react-crossword'
+import { createSubscription } from 'subscription'
 
-document.addEventListener('DOMContentLoaded', () => {
-  const crosswordElement = document.getElementsByClassName('js-crossword')[0];
-  const crosswordData = JSON.parse(crosswordElement.dataset.crossword);
+const crosswordElement = document.getElementsByClassName('js-crossword')[0];
+
+const crosswordData = JSON.parse(crosswordElement.dataset.crossword);
+const crosswordIdentifier = crosswordElement.dataset.crosswordIdentifier;
+const room = crosswordElement.dataset.room;
+
+const crosswordRef = React.createRef();
+const onReceiveMove = (move) => { crosswordRef.current.setCellValue(move.x, move.y, move.value, false) }
+
+let subscription = createSubscription(crosswordIdentifier, room, onReceiveMove, function(initialState) {
   ReactDOM.render(<Crossword
-    data={crosswordData}
+    ref={ crosswordRef }
+    data={ crosswordData }
+    loadGrid={ () => initialState }
+    onMove={ (move) => { subscription.move(move) }}
   />, crosswordElement);
-
-})
+});
