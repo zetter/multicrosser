@@ -3,7 +3,7 @@
 class RoomsController < ApplicationController
   def show
     raise ActionController::RoutingError.new('Source not Found') unless params[:source] == 'guardian'
-    raise ActionController::RoutingError.new('Sereis not Found') unless params[:series].in?(['quiptic', 'quick', 'weekend', 'cryptic', 'speedy'])
+    raise ActionController::RoutingError.new('Series not Found') unless params[:series].in?(['quiptic', 'quick', 'weekend', 'cryptic', 'speedy'])
     @crossword = crossword
     @parsed_crossword = JSON.parse(crossword)
     @url = url
@@ -26,7 +26,7 @@ class RoomsController < ApplicationController
     response = Faraday.get(url)
     html = Nokogiri::HTML(response.body)
     crossword_element = html.css('.js-crossword')
-    raise ActionController::RoutingError.new('Elemnt not Found') unless crossword_element.any?
+    raise ActionController::RoutingError.new('Element not Found') unless crossword_element.any?
     crossword_element.first['data-crossword-data']
   end
 
