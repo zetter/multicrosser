@@ -27,7 +27,7 @@ gem 'redis', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'nokogiri'
 gem 'faraday'
-gem "webpacker", "~> 3.5"
+gem 'webpacker', '>= 4.0.x'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
