@@ -4,22 +4,22 @@ const createSubscription = function createSubscription(crossword, room, onReceiv
   const cable = ActionCable.createConsumer(process.env.WEBSOCKET_URL);
 
   return cable.subscriptions.create(
-    { channel: 'MovesChannel', crossword, room},
+    { channel: 'MovesChannel', crossword, room },
     {
       received: function received(data) {
         if (data.initialState) {
           onInitialState(data.initialState);
         } else {
-          onReceiveMove(data)
+          onReceiveMove(data);
         }
       },
       move: function move(data) {
         this.perform('move', data);
       },
       connected: function connected() {
-      }
-    }
+      },
+    },
   );
-}
+};
 
 export { createSubscription };
