@@ -15,7 +15,9 @@ const subscription = createSubscription(crosswordIdentifier, room, onReceiveMove
   ReactDOM.render(<Crossword
     ref={crosswordRef}
     data={crosswordData}
-    loadGrid={() => initialState}
+    loadGrid={() => {} }
+    saveGrid={() => {} }
     onMove={(move) => { subscription.move(move); }}
   />, crosswordElement);
+  crosswordRef.current.updateGrid(initialState)
 });
