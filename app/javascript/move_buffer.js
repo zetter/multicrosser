@@ -1,6 +1,6 @@
 class MoveBuffer {
   constructor(key) {
-    this.storage = window.sessionStorage;
+    this.storage = window.localStorage;
     this.key = `move-buffer-${key}`;
   }
 
