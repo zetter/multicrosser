@@ -10,8 +10,13 @@ const crosswordData = JSON.parse(crossword);
 
 const crosswordRef = React.createRef();
 const onReceiveMove = (move) => { crosswordRef.current.setCellValue(move.x, move.y, move.value, false); };
+const onReplayMove = (move) => {
+  if (crosswordRef.current.getCellValue(move.x, move.y) === move.previousValue) {
+    crosswordRef.current.setCellValue(move.x, move.y, move.value);
+  }
+}
 
-const subscription = createSubscription(crosswordIdentifier, room, onReceiveMove, (initialState) => {
+const subscription = createSubscription(crosswordIdentifier, room, onReceiveMove, onReplayMove, (initialState) => {
   ReactDOM.render(<Crossword
     ref={crosswordRef}
     data={crosswordData}

@@ -1,7 +1,7 @@
 import ActionCable from 'actioncable';
 import MoveBuffer from 'move_buffer';
 
-const createSubscription = function createSubscription(crossword, room, onReceiveMove, onInitialState) {
+const createSubscription = function createSubscription(crossword, room, onReceiveMove, onReplayMove, onInitialState) {
   const cable = ActionCable.createConsumer(process.env.WEBSOCKET_URL);
   const moveBuffer = new MoveBuffer(room);
 
@@ -24,7 +24,7 @@ const createSubscription = function createSubscription(crossword, room, onReceiv
       },
       connected: function connected() {
         moveBuffer.deqeueAll().forEach((move) => {
-          this.move(move);
+          onReplayMove(move);
         });
       },
     },
