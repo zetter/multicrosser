@@ -16,9 +16,15 @@ const createSubscription = function createSubscription(crossword, room, onReceiv
         }
       },
       move: function move(data) {
-        const success = this.perform('move', data);
-        if (!success) {
-          moveBuffer.queue(data);
+        let success = false;
+        try {
+          success = this.perform('move', data);
+        } catch (e) {
+          // catch error
+        } finally {
+          if (!success) {
+            moveBuffer.queue(data);
+          }
         }
       },
       connected: function connected() {
