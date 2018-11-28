@@ -6028,10 +6028,10 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-crossword@^0.1.1:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/react-crossword/-/react-crossword-0.1.3.tgz#c4d343279676302d3a9fcc95e70ba063834a366a"
-  integrity sha512-pdfkDAWZZOxrq6K49hwuN+qXTPYEAw1ov+Fsx2SPNZiWBk/2QPknkbrDyRL4+S19Gwab+ie7Jfv4kU/KXKR+bA==
+react-crossword@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/react-crossword/-/react-crossword-0.1.4.tgz#998e56ef862e428f854d0af6328b46fba010796c"
+  integrity sha512-9eYa5rqwDRweZttvSD8WP0Mpv9T970wQ5X6u8K7JD6HJT2Fx4gQN7KQgwKtZT5uze6WAGMZs4SCQ12azIzwR4w==
   dependencies:
     bean "~1.0.14"
     bonzo "~2.0.0"
