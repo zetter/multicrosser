@@ -1,7 +1,6 @@
-<a href="/"><h2>Several People Are Solving</h2></a>
 <h1><%= @parsed_crossword['name'] %></h1>
 <p>
-  <%= Time.at(@parsed_crossword['date']/1000).to_date.to_s %> - 
+  <%= Time.at(@parsed_crossword['date']/1000).to_date.to_s %> -
   <%- if @parsed_crossword['creator'] -%>
     Set by <%= @parsed_crossword['creator']['name'] %>
     -
@@ -16,3 +15,5 @@
 }) %>
 
 <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+
+<p>Share this page with others to solve this crossword with them.</p>

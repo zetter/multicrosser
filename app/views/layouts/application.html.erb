@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Several People Are Solving</title>
+    <title>Several People are Solving</title>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
-    <style>
-       body {
-         font-family: 'PT Serif', serif;
-       }
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag "application" %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class="banner">
+      <a href="/"><h2>Several People are Solving</h2></a>
+    </div>
+    <div class="main-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

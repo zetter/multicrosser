@@ -13,3 +13,50 @@
  *= require_tree .
  *= require_self
  */
+
+html, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'PT Serif', serif;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  margin-top: 15px;
+  margin-bottom: 2px;
+  font-size: 1em;
+}
+
+body {
+  background-color: #FCFCFC;
+  padding:0;
+  margin:0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+.main-container {
+  padding: 7px;
+  padding-top: 15px;
+}
+ a {
+   text-decoration: none;
+   color: #4c79c4;
+ }
+
+.banner {
+  background-color: #66a0ff;
+  padding: 7px;
+}
+
+.banner a {
+  color: #FFF;
+}
