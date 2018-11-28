@@ -16,9 +16,8 @@ const createSubscription = function createSubscription(crossword, room, onReceiv
         }
       },
       move: function move(data) {
-        if (this.consumer.connection.isActive()) {
-          this.perform('move', data);
-        } else {
+        const success = this.perform('move', data);
+        if (!success) {
           moveBuffer.queue(data);
         }
       },
