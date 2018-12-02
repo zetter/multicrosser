@@ -20,7 +20,11 @@ html, h1, h2, h3 {
 }
 
 h1, h2, h3 {
-  font-family: 'PT Serif', serif;
+  font-family: 'Catamaran', sans-serif;
+}
+
+strong {
+  font-family: 'Catamaran', sans-serif;
 }
 
 h1 {
@@ -34,7 +38,7 @@ h2 {
 h3 {
   margin-top: 15px;
   margin-bottom: 2px;
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 body {
@@ -59,4 +63,12 @@ body {
 
 .banner a {
   color: #FFF;
+}
+
+.intro {
+  margin-top: 0;
+}
+
+.about {
+  margin-top: 50px;
 }
