@@ -6029,9 +6029,9 @@ rc@^1.2.7:
     strip-json-comments "~2.0.1"
 
 react-crossword@^0.1.4:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/react-crossword/-/react-crossword-0.1.6.tgz#ab42513e80ccd746f12276e38805bb384a96762a"
-  integrity sha512-pFo/28yr0MdleeGUhLXfoksRQUL4o4X06bmvTIWFyz9RfdYbxLSVQzvRO594jqeVdxGncJ/CBDCKMyQw1Mju1Q==
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/react-crossword/-/react-crossword-0.1.7.tgz#d3cbcc4c819c4d9f552e72c129bf42a0a0197da7"
+  integrity sha512-GTVTghKuSp03J5NlH5U30CEyxtTtZislcz+7jYyYcjkFWUnZihbOWtwm6yZkjTkNW6Cy0NuynITdkmOkX0hPCw==
   dependencies:
     bean "~1.0.14"
     bonzo "~2.0.0"
