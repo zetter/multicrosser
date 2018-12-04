@@ -1,11 +1,14 @@
 <h1><%= @parsed_crossword['name'] %></h1>
 <p>
-  <%= Time.at(@parsed_crossword['date']/1000).to_date.to_s %> -
+  <%= Time.at(@parsed_crossword['date']/1000).to_date.to_s %>
   <%- if @parsed_crossword['creator'] -%>
-    Set by <%= @parsed_crossword['creator']['name'] %>
     -
+    Set by <%= @parsed_crossword['creator']['name'] %>
   <%- end -%>
-  <a href="<%= @url %>">Published by the Guardian</a>
+  <% if params['source'] == 'guardian' %>
+    -
+    <a href="<%= @url %>">Published by the Guardian</a>
+  <% end %>
 </p>
 
 <%= content_tag(:div, '', class: 'js-crossword', data: {

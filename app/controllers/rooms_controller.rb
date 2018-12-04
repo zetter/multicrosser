@@ -2,8 +2,8 @@
 
 class RoomsController < ApplicationController
   def show
-    raise ActionController::RoutingError.new('Source not Found') unless params[:source] == 'guardian'
-    raise ActionController::RoutingError.new('Series not Found') unless params[:series].in?(['quiptic', 'quick', 'weekend', 'cryptic', 'speedy'])
+    raise ActionController::RoutingError.new('Source not Found') unless params[:source].in?(['guardian', 'computation-club'])
+    raise ActionController::RoutingError.new('Series not Found') unless params[:series].in?(['quiptic', 'quick', 'weekend', 'cryptic', 'speedy', 'christmas'])
     @crossword = crossword
     @parsed_crossword = JSON.parse(crossword)
     @url = url
@@ -15,6 +15,10 @@ class RoomsController < ApplicationController
   helper_method :crossword_identifier
 
   def crossword
+    if (params[:source] == 'computation-club') && (params[:series] == 'christmas') && (params[:identifier] == '1')
+      return File.read(Rails.root + 'db' + 'computation_club_christmas_crossword.js')
+    end
+
     if redis.exists(crossword_identifier)
       redis.get(crossword_identifier)
     else
