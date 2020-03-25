@@ -3,7 +3,7 @@
 class RoomsController < ApplicationController
   def show
     raise ActionController::RoutingError.new('Source not Found') unless params[:source] == 'guardian'
-    raise ActionController::RoutingError.new('Series not Found') unless params[:series].in?(['quiptic', 'quick', 'weekend', 'cryptic', 'speedy'])
+    raise ActionController::RoutingError.new('Series not Found') unless params[:series].in?(['quiptic', 'quick', 'weekend', 'cryptic', 'speedy', 'prize', 'everyman'])
     @crossword = crossword
     @parsed_crossword = JSON.parse(crossword)
     @url = url

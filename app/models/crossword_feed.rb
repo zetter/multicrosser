@@ -17,7 +17,7 @@ class CrosswordFeed
     xml.css('item').map do |element|
       link = element.css('link').text
       series, identifier = link.split('/').last(2)
-      next unless series.in?(['quiptic', 'quick', 'weekend', 'cryptic', 'speedy'])
+      next unless series.in?(['quiptic', 'quick', 'weekend', 'cryptic', 'speedy', 'prize', 'everyman'])
       {
         title: element.css('title').text,
         source: 'guardian',
