@@ -21,10 +21,12 @@ html, h1, h2, h3 {
 
 h1, h2, h3 {
   font-family: 'Catamaran', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 strong {
   font-family: 'Catamaran', sans-serif;
+  font-size: 1.09em;
 }
 
 h1 {
@@ -36,9 +38,19 @@ h2 {
 }
 
 h3 {
-  margin-top: 15px;
+  margin-top: 20px;
   margin-bottom: 2px;
   font-size: 1.1em;
+}
+
+ul  {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 5px;
 }
 
 body {

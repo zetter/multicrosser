@@ -1,10 +1,16 @@
 <p class="intro">
-  Start solving a new crossword:
+  Pick one of the crosswords below then share the link with friends to solve together.
 </p>
 
-<%- @crossword_feed.feed.each do |feed_item| -%>
-  <h3><%= Time.xmlschema(feed_item['date']).localtime.to_date %></h3>
-  <%= link_to(feed_item['title'], crossword_path(feed_item['source'], feed_item['series'], feed_item['identifier'])) %>
+<%- @series_with_crosswords.each do |series, crosswords| -%>
+  <h3><%= series.titleize %></h3>
+  <ul>
+  <%- crosswords.each do |crossword| -%>
+    <li>
+      <%= link_to(crossword.name, crossword_path(crossword.source, crossword.series, crossword.identifier)) %>
+    </li>
+  <%- end -%>
+  </ul>
 <%- end -%>
 
 <p class="about">

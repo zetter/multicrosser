@@ -1,5 +1,5 @@
 class PageController < ApplicationController
   def index
-    @crossword_feed = CrosswordFeed.new
+    @series_with_crosswords = Series.get_all
   end
 end
