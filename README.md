@@ -4,6 +4,13 @@ This is a Rails Application that uses WebSockets and the [react-crossword](https
 
 You can see a demo at [multicrosser.chriszetter.com](https://multicrosser.chriszetter.com).
 
+## Setup
+
+To run this project:
++ Install Redis and make sure the server is running
++ Run `./bin/setup` to install dependencies
++ Run `./bin/rails server` to start the project
+
 ## How it works
 
 ### Sending a Move
