@@ -1,6 +1,6 @@
 <h1><%= @parsed_crossword['name'] %></h1>
 <p>
-  <%= Time.at(@parsed_crossword['date']/1000).to_date.to_s %> -
+  <%= Time.at(@parsed_crossword['date']/1000).to_date.strftime("%A %-d %B") %> -
   <%- if @parsed_crossword['creator'] -%>
     Set by <%= @parsed_crossword['creator']['name'] %>
     -
