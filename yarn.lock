@@ -6515,10 +6515,10 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
-react-crossword@^0.1.8:
-  version "0.1.8"
-  resolved "https://registry.yarnpkg.com/react-crossword/-/react-crossword-0.1.8.tgz#e4ddbbe633e9e42436af60ebcbb95068c4d1a6ae"
-  integrity sha512-P+L30iYiZqZTBlu2sMhS/24SypHAUKng8gdvihZazKocw1ykWzcslLiRcmUKuu9eUIkmQKsCMioP19uo5JbBEQ==
+react-crossword@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-crossword/-/react-crossword-0.2.0.tgz#47229f313d4ebc881446744250c0b938385d0675"
+  integrity sha512-8anUQKCAzh10EQcT1Ip/eAwjACVyBVnPq8HGNOKo075kc2IN3aDWUxF5xJR9O6XnoQ7YoDla209c7z1YnBMTgQ==
   dependencies:
     bean "~1.0.14"
     bonzo "~2.0.0"
