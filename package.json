@@ -7,7 +7,7 @@
     "actioncable": "^5.2.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
-    "react-crossword": "^0.1.4",
+    "react-crossword": "^0.1.8",
     "react-dom": "^16.6.3"
   },
   "devDependencies": {
